@@ -126,6 +126,9 @@ with col7:
     st.write('### IPP')
     input_ipp = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipp'))
 
+st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
+
+
 # Grau de escolaridade
 st.write('### Nível de escolaridade')
 input_grau_escolaridade = st.selectbox('Qual o Grau de Escolaridade ?', dados['Grau_escolaridade'].unique())
