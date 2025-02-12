@@ -30,7 +30,7 @@ with col2:
     st.write('### IEG')
     input_ieg = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ieg'))
 
-with col3
+with col3:
      st.write('### IPS')
      input_ips = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ips'))
 
