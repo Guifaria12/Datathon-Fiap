@@ -129,68 +129,6 @@ with col7:
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
 
-# Grau de escolaridade
-st.write('### Nível de escolaridade')
-input_grau_escolaridade = st.selectbox('Qual o Grau de Escolaridade ?', dados['Grau_escolaridade'].unique())
-
-# Estado civil
-st.write('### Estado civil')
-input_estado_civil = st.selectbox('Qual é o seu estado civil ?', dados['Estado_civil'].unique())
-
-# Número de membros da família
-st.write('### Família')
-membros_familia = float(st.slider('Selecione quantos membros tem na sua família', 1, 20))
-
-# Carro próprio
-st.write('### Carro próprio')
-input_carro_proprio = st.radio('Você possui um automóvel?',['Sim','Não'], index=0)
-input_carro_proprio_dict = {'Sim': 1, 'Não':0}
-input_carro_proprio = input_carro_proprio_dict.get(input_carro_proprio)
-
-# Casa própria
-st.write('### Casa própria')
-input_casa_propria = st.radio('Você possui uma propriedade?',['Sim','Não'], index=0)
-input_casa_propria_dict = {'Sim': 1, 'Não':0}
-input_casa_propria = input_casa_propria_dict.get(input_casa_propria)
-
-# Moradia
-st.write('### Tipo de residência')
-input_tipo_moradia = st.selectbox('Qual é o seu tipo de moradia ?', dados['Moradia'].unique())
-
-# Situação de emprego
-st.write('### Categoria de renda')
-input_categoria_renda = st.selectbox('Qual é a sua categoria de renda ?', dados['Categoria_de_renda'].unique())
-
-# Ocupação
-st.write('### Ocupação')
-input_ocupacao = st.selectbox('Qual é a sua ocupação ?', dados['Ocupacao'].unique())
-
-# Tempo de experiência
-st.write('### Experiência')
-input_tempo_experiencia = float(st.slider('Selecione o seu tempo de experiência em anos', 0,30))
-
-# Rendimentos
-st.write('### Rendimentos')
-input_rendimentos = float(st.text_input('Digite o seu rendimento anual (em reais) e pressione ENTER para confirmar',0))
-
-# Telefone trabalho
-st.write('### Telefone corporativo')
-input_telefone_trabalho = st.radio('Você tem um telefone corporativo?',['Sim','Não'], index=0)
-telefone_trabalho_dict = {'Sim': 1, 'Não':0}
-telefone_trabalho = telefone_trabalho_dict.get(input_telefone_trabalho)
-
-# Telefone fixo
-st.write('### Telefone fixo')
-input_telefone = st.radio('Você tem um telefone fixo?',['Sim','Não'], index=0)
-telefone_dict = {'Sim': 1, 'Não':0}
-telefone = telefone_dict.get(input_telefone)
-
-# Email 
-st.write('### Email')
-input_email = st.radio('Você tem um email?',['Sim','Não'], index=0)
-email_dict = {'Sim': 1, 'Não':0}
-email = email_dict.get(input_email)
-
 # Lista de todas as variáveis: 
 novo_cliente = [0, # ID_Cliente
                     input_carro_proprio, # Tem_carro
