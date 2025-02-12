@@ -1,18 +1,23 @@
 [theme]
+base = "light"
+primaryColor = "#FF4B4B"
+backgroundColor = "#E6F8FF"
+secondaryBackgroundColor = "#699EDE"
+textColor = "#31333F"
+font = "sans serif"
 
-# Primary accent for interactive elements
-primaryColor = '#a467f5'
+[layout]
+wide = true
 
-# Background color for the main content area
-backgroundColor = '#303233'
+[server]
+headless = true
+enableCORS = false
+enableWebsocketCompression = true
+server.maxUploadSize = 200
+runOnSave = false
+server.threaded = true
+maxUploadSize = 100
+threaded = true
 
-# Background color for sidebar and most interactive widgets
-secondaryBackgroundColor = '#916ded'
-
-# Color used for almost all text
-textColor = '#FFFFFF'
-
-# Font family for all text in the app, except code blocks
-# Accepted values (serif | sans serif | monospace) 
-# Default: "sans serif"
-font = 'sans serif'
+[logger]
+level = "error"
