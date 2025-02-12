@@ -1,6 +1,7 @@
 #Importação das bibliotecas
 import streamlit as st 
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 import joblib
@@ -30,8 +31,6 @@ base_completa.loc[base_completa['Ano ingresso'] == 2024, 'Status_entrada'] = 'No
 base_completa.loc[(base_completa['Ano ingresso'] != 2024) & (base_completa['origem'] == 'Base2024') , 'Status_entrada'] = 'Veterano'
 
 base_completa['Status_entrada'].fillna('Desistente', inplace=True)
-
-import numpy as np
 
 base_completa.replace('#DIV/0!', np.nan, inplace=True)
 base_completa.replace('INCLUIR', np.nan, inplace=True)
