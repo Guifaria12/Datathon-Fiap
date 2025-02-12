@@ -19,7 +19,14 @@ st.warning('Preencha o formulário com todos os seus dados pessoais e clique no 
 
 # Idade
 st.write('### IAA')
-input_iaa = float(st.slider('Selecione a sua idade', 0, 10))
+# Cria os botões para aumentar e diminuir a nota
+col1, col2 = st.columns(2)
+with col1:
+    if st.button('–'):
+        st.session_state.nota = max(0, st.session_state.nota - 0.1)  # diminui 0.1, mas não abaixo de 0
+with col2:
+    if st.button('＋'):
+        st.session_state.nota = min(10, st.session_state.nota + 0.1)  # aumenta 0.1, mas não acima de 10
 
 # Grau de escolaridade
 st.write('### Nível de escolaridade')
