@@ -18,7 +18,7 @@ st.markdown("<h1 style='text-align: center; '> DATATHON - Modelo Preditivo </h1>
 st.warning('Preencha o formulário com todos os seus dados pessoais e clique no botão **ENVIAR** no final da página.')
 
 # Cria duas colunas
-col1, col2, col3 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 # IAA na primeira coluna
 with col1:
