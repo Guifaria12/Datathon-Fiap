@@ -38,20 +38,14 @@ with col3:
 # Cria a segunda linha com 1 coluna para a quarta coluna
 col4, col5 = st.columns(2) # Cria a quarta coluna abaixo da primeira
 
-# Exibindo o callout manualmente com Markdown
+# Coloca conteúdo na quarta coluna
 with col4:
-    st.markdown('#### IDA (Dentro do Callout)')
-    st.markdown("<div style='background-color: #f1f1f1; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);'>", unsafe_allow_html=True)
+    st.write('### IDA')
     input_ida = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ida'))
-    st.markdown("</div>", unsafe_allow_html=True)
 
 with col5:
-    st.markdown('#### IPV (Dentro do Callout)')
-    st.markdown("<div style='background-color: #f1f1f1; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);'>", unsafe_allow_html=True)
+    st.write('### IPV')
     input_ipv = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipv'))
-    st.markdown("</div>", unsafe_allow_html=True)
-# Exibindo dados em um callout (aviso, informação, sucesso ou erro)
-st.markdown("## **Dados Selecionados**")
 
 # Callout com os valores inseridos
 st.info(f"""
