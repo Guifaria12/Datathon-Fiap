@@ -17,13 +17,18 @@ st.markdown("<h1 style='text-align: center; '> DATATHON - Modelo Preditivo </h1>
 
 st.warning('Preencha o formulário com todos os seus dados pessoais e clique no botão **ENVIAR** no final da página.')
 
-# IAA
-st.write('### IAA')
-input_iaa = float(st.slider('Selecione a sua nota', 0, 10, key='nota_iaa'))
+# Cria duas colunas
+col1, col2 = st.columns(2)
 
-# IEG
-st.write('### IEG')
-input_ieg = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ieg'))
+# IAA na primeira coluna
+with col1:
+    st.write('### IAA')
+    input_iaa = float(st.slider('Selecione a sua nota', 0, 10, key='nota_iaa'))
+
+# IEG na segunda coluna
+with col2:
+    st.write('### IEG')
+    input_ieg = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ieg'))
 
 # Grau de escolaridade
 st.write('### Nível de escolaridade')
