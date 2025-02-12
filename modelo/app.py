@@ -20,10 +20,12 @@ st.warning('Preencha o formulário com todos os seus dados pessoais e clique no 
 # Cria duas colunas
 col1, col2, col3 = st.columns(3)
 
-# IAA na primeira coluna
-with col1:
-    st.write('### IAA')
-    input_iaa = float(st.slider('Selecione a sua nota', 0, 10, key='nota_iaa'))
+# Usando um container para o conteúdo
+with st.container():
+    # IAA na primeira coluna dentro do container
+    with col1:
+        st.write('### IAA')
+        input_iaa = float(st.slider('Selecione a sua nota', 0, 10, key='nota_iaa'))
 
 # IEG na segunda coluna
 with col2:
