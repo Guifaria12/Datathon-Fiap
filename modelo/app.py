@@ -104,7 +104,7 @@ with col2:
 # IPS na terceira coluna
 with col3:
      st.write('### IPS')
-     input_ips = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ips'))
+     input_ips = float(st.slider('Selecione a sua nota', 0, 1, key='nota_ips'))
 
 # Cria a segunda linha com 1 coluna para a quarta coluna
 col4, col5, col6, col7 = st.columns(4) # Cria a quarta coluna abaixo da primeira
