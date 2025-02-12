@@ -17,8 +17,14 @@ st.markdown("<h1 style='text-align: center; '> DATATHON - Modelo Preditivo </h1>
 
 st.warning('Preencha o formulário com todos os seus dados pessoais e clique no botão **ENVIAR** no final da página.')
 
-# Cria duas colunas
+# Criando o layout com 3 colunas para a primeira linha
 col1, col2, col3 = st.columns(3)
+
+# Criando o layout com 2 colunas para a segunda linha
+col4, col5 = st.columns(2)
+
+# Caixa com fundo branco para todo o conteúdo
+st.markdown("<div style='background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);'>", unsafe_allow_html=True)
 
 # IAA na primeira coluna
 with col1:
@@ -32,29 +38,21 @@ with col2:
 
 # IPS na terceira coluna
 with col3:
-     st.write('### IPS')
-     input_ips = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ips'))
+    st.write('### IPS')
+    input_ips = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ips'))
 
-# Cria a segunda linha com 1 coluna para a quarta coluna
-col4, col5 = st.columns(2) # Cria a quarta coluna abaixo da primeira
-
-# Coloca conteúdo na quarta coluna
+# IDA na quarta coluna
 with col4:
     st.write('### IDA')
     input_ida = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ida'))
 
+# IPV na quinta coluna
 with col5:
     st.write('### IPV')
     input_ipv = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipv'))
 
-# Callout com os valores inseridos
-st.info(f"""
-- **IAA:** {input_iaa}
-- **IEG:** {input_ieg}
-- **IPS:** {input_ips}
-- **IDA:** {input_ida}
-- **IPV:** {input_ipv}
-""")
+# Fechar a caixa branca
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Grau de escolaridade
 st.write('### Nível de escolaridade')
