@@ -7,8 +7,17 @@ import joblib
 from joblib import load
 
 #carregando os dados 
-dados = pd.read_csv('https://raw.githubusercontent.com/alura-tech/alura-tech-pos-data-science-credit-scoring-streamlit/main/df_clean.csv')
+url_2022 = 'https://docs.google.com/spreadsheets/d/1td91KoeSgXrUrCVOUkLmONG9Go3LVcXpcNEw_XrL2R0/export?format=csv&gid=90992733'
+url_2023 = 'https://docs.google.com/spreadsheets/d/1td91KoeSgXrUrCVOUkLmONG9Go3LVcXpcNEw_XrL2R0/export?format=csv&gid=555005642'
+url_2024 = 'https://docs.google.com/spreadsheets/d/1td91KoeSgXrUrCVOUkLmONG9Go3LVcXpcNEw_XrL2R0/export?format=csv&gid=215885893'
 
+base_dados_2022 = pd.read_csv(url_2022)
+base_dados_2023 = pd.read_csv(url_2023)
+base_dados_2024 = pd.read_csv(url_2024)
+
+base_dados_2022['origem'] = 'Base2022'
+base_dados_2023['origem'] = 'Base2023'
+base_dados_2024['origem'] = 'Base2024'
 
 ############################# Streamlit ############################
 st.markdown('<style>div[role="listbox"] ul{background-color: #6e42ad}; </style>', unsafe_allow_html=True)
