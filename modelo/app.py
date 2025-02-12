@@ -19,11 +19,11 @@ st.warning('Preencha o formulário com todos os seus dados pessoais e clique no 
 
 # IAA
 st.write('### IAA')
-input_iaa = float(st.slider('Selecione a sua nota', 0, 10))
+input_iaa = float(st.slider('Selecione a sua nota', 0, 10, key='nota_iaa'))
 
-#IEG
+# IEG
 st.write('### IEG')
-input_ieg = float(st.slider('Selecione a sua nota', 0, 10))
+input_ieg = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ieg'))
 
 # Grau de escolaridade
 st.write('### Nível de escolaridade')
