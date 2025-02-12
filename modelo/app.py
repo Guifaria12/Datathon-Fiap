@@ -128,6 +128,9 @@ with col7:
 
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
+# Ocupação
+st.write('### Género')
+input_genero = st.selectbox('Qual é o seu género?', dados['Gênero'].unique())
 
 # Lista de todas as variáveis: 
 novo_cliente = [0, # ID_Cliente
