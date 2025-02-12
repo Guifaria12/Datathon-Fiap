@@ -47,6 +47,18 @@ with col5:
     st.write('### IPV')
     input_ipv = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipv'))
 
+# Exibindo dados em um callout (aviso, informação, sucesso ou erro)
+st.markdown("## **Dados Selecionados**")
+
+# Callout com os valores inseridos
+st.info(f"""
+- **IAA:** {input_iaa}
+- **IEG:** {input_ieg}
+- **IPS:** {input_ips}
+- **IDA:** {input_ida}
+- **IPV:** {input_ipv}
+""")
+
 # Grau de escolaridade
 st.write('### Nível de escolaridade')
 input_grau_escolaridade = st.selectbox('Qual o Grau de Escolaridade ?', dados['Grau_escolaridade'].unique())
