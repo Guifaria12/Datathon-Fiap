@@ -38,7 +38,7 @@ with col3:
      input_ips = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ips'))
 
 # Cria a segunda linha com 1 coluna para a quarta coluna
-col4, col5 = st.columns(2) # Cria a quarta coluna abaixo da primeira
+col4, col5, col6 = st.columns(3) # Cria a quarta coluna abaixo da primeira
 
 # Coloca conteúdo na quarta coluna
 with col4:
@@ -48,6 +48,10 @@ with col4:
 with col5:
     st.write('### IPV')
     input_ipv = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipv'))
+
+with col6:
+    st.write('### IAN')
+    input_ian = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ian'))
 
 # Grau de escolaridade
 st.write('### Nível de escolaridade')
