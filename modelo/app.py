@@ -18,8 +18,8 @@ st.markdown("<h1 style='text-align: center; '> DATATHON - Modelo Preditivo </h1>
 st.warning('Preencha o formulário com todos os seus dados pessoais e clique no botão **ENVIAR** no final da página.')
 
 # Idade
-st.write('### Idade')
-input_idade = float(st.slider('Selecione a sua idade', 18, 100))
+st.write('### IAA')
+input_iaa = float(st.slider('Selecione a sua idade', 0, 10))
 
 # Grau de escolaridade
 st.write('### Nível de escolaridade')
