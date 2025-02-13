@@ -355,6 +355,28 @@ with col7:
 
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
+# Cria duas colunas
+col1, col2, col3 = st.columns(3)
+
+# Usando um container para o conteúdo
+with st.container():
+    # Matem na primeira coluna dentro do container
+    with col1:
+        st.write('### Matem')
+        input_matem = float(st.slider('Selecione a sua nota', 0, 10, key='nota_matem'))
+
+# Portug na segunda coluna
+with col2:
+    st.write('### Portug')
+    input_portug = float(st.slider('Selecione a sua nota', 0, 10, key='nota_portug'))
+
+with col3:
+    st.write('### Inglês')
+    input_ingles = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ingles'))
+
+
+st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
+
 # Gênero
 st.write('### Género')
 input_genero = st.selectbox('Qual é o seu género?', base_completa['Gênero'].unique())
