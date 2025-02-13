@@ -192,32 +192,32 @@ with st.container():
 # IEG na segunda coluna
 with col2:
     st.write('### IEG')
-    input_ieg = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ieg'))
+    input_ieg = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ieg'))
 
 # IPS na terceira coluna
 with col3:
      st.write('### IPS')
-     input_ips = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ips'))
+     input_ips = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ips'))
 
 # Cria a segunda linha com 1 coluna para a quarta coluna
 col4, col5, col6, col7 = st.columns(4) # Cria a quarta coluna abaixo da primeira
 
 with col4:
     st.write('### IDA')
-    input_ida = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ida'))
+    input_ida = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ida'))
     
 # Coloca conteúdo na quarta coluna
 with col5:
    st.write('### IPV')
-   input_ipv = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipv'))
+   input_ipv = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ipv'))
 
 with col6:
     st.write('### IAN')
-    input_ian = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ian'))
+    input_ian = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ian'))
 
 with col7:
     st.write('### IPP')
-    input_ipp = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipp'))
+    input_ipp = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ipp'))
 
 st.warning("""
 **Indicadores de Avaliação**  
@@ -246,16 +246,16 @@ with st.container():
     # Matem na primeira coluna dentro do container
     with col1:
         st.write('### Matemática')
-        input_matem = float(st.slider('Selecione a sua nota', 0, 10, key='nota_matem'))
+        input_matem = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_matem'))
 
 # Portug na segunda coluna
 with col2:
     st.write('### Português')
-    input_portug = float(st.slider('Selecione a sua nota', 0, 10, key='nota_portug'))
+    input_portug = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_portug'))
 
 with col3:
     st.write('### Inglês')
-    input_ingles = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ingles'))
+    input_ingles = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ingles'))
 
 st.warning("""
 - **Matemática:** Média das Notas de Matemática  
