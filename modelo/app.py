@@ -338,7 +338,7 @@ with col4:
     input_ida = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ida'))
 
 # Cria a segunda linha com 1 coluna para a quarta coluna
-col5, col7, col7 = st.columns(3) # Cria a quarta coluna abaixo da primeira
+col5, col6, col7 = st.columns(3) # Cria a quarta coluna abaixo da primeira
 
 # Coloca conteúdo na quarta coluna
 with col5:
