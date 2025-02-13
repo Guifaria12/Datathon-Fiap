@@ -323,6 +323,7 @@ teste_novo_cliente  = pd.concat([teste_df,cliente_predict_df],ignore_index=True)
 teste_novo_cliente = pipeline(teste_novo_cliente)
 
 cliente_pred = teste_novo_cliente.drop(['Status_entrada'], axis=1)
+cliente_pred.drop(columns=['Unnamed: 0'], inplace=True)
 st.write(cliente_pred.columns)
 
 if st.button('Enviar'):
