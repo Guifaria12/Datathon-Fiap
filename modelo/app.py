@@ -154,7 +154,7 @@ st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
 st.markdown("<h1 style='text-align: center; '> DATATHON - Modelo Preditivo </h1>", unsafe_allow_html = True)
 
-st.warning('Preencha o formulário com todos os seus dados e clique no botão **ENVIAR** no final da página.')
+st.warning('Para descobrir as chances do aluno continuar no programa de ensino, preencha o formulário com todos os seus dados e clique no botão ENVIAR no final da página.')
 
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 # Cria duas colunas
