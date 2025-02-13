@@ -259,7 +259,7 @@ with col3:
 
 st.warning("""
 - **Matemática:** Média das Notas de Matemática  
-- **Português:** Média das Notas de Portugue s do Aluno 
+- **Português:** Média das Notas de Português do Aluno 
 - **Inglês:** Média das Notas de Inglês do Aluno 
 """)
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
