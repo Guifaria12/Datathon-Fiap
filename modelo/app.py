@@ -361,7 +361,7 @@ input_genero = st.selectbox('Qual é o seu género?', base_completa['Gênero'].u
 
 # Idade
 st.write('### Idade')
-input_idade = st.selectbox('Qual é o seu género?', base_completa['Idade'].unique())
+input_idade = float(st.slider('Selecione a sua idade', 18, 100))
 
 # Instituição de Ensino
 st.write('### Instituição de Ensino')
