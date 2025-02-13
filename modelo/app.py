@@ -343,7 +343,7 @@ with col4:
 # Coloca conteúdo na quarta coluna
 with col5:
    st.write('### IPV')
-    input_ipv = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipv'))
+   input_ipv = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipv'))
 
 with col6:
     st.write('### IAN')
