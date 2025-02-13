@@ -304,8 +304,11 @@ Rodrigues, Marcelo Pereira Varesi e Vitória Pinheiro de Mattos**
 st.header("**Introdução**")
 
 st.write("""
-A INSERIR
-""")
+A educação é um fator crucial para o desenvolvimento social e econômico, especialmente em comunidades vulneráveis. A ONG "Passos Mágicos" atua nesse cenário, oferecendo suporte educacional e socioeconômico para crianças e jovens, com o objetivo de transformar suas realidades. Este trabalho busca contribuir para essa missão por meio da análise de dados e da construção de modelos preditivos que avaliem o impacto das ações da organização.
+
+Com base em dados coletados entre 2020 e 2022, que incluem informações educacionais e socioeconômicas, propõe-se uma análise descritiva para identificar padrões e indicadores de desempenho dos estudantes. Além disso, será desenvolvido um modelo preditivo utilizando técnicas de machine learning ou deep learning para prever o comportamento dos estudantes com base em variáveis-chave, como desempenho acadêmico e condições socioeconômicas.
+
+O objetivo final é fornecer insights que possam auxiliar a "Passos Mágicos" na tomada de decisões estratégicas, ampliando o impacto positivo de suas iniciativas. Através da ciência de dados, busca-se contribuir para a transformação educacional e social das comunidades atendidas pela organização.""")
 
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
