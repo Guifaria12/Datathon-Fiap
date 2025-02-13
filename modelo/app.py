@@ -322,7 +322,7 @@ col1, col2 = st.columns(2)
 
 # Usando um container para o conteúdo
 with st.container():
-    # IAA na primeira coluna dentro do container
+    # Fase na primeira coluna dentro do container
     with col1:
         st.write('### Fase')
         input_fase = float(st.slider('Selecione a sua nota', 0, 8, key='nota_fase'))
@@ -399,8 +399,8 @@ with col3:
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
 # Gênero
-st.write('### Género')
-input_genero = st.selectbox('Qual é o seu género?', base_completa['Gênero'].unique())
+st.write('### Gênero')
+input_genero = st.selectbox('Qual é o seu gênero?', base_completa['Gênero'].unique())
 
 # Idade
 st.write('### Idade')
@@ -409,3 +409,62 @@ input_idade = float(st.slider('Selecione a sua idade', 18, 100))
 # Instituição de Ensino
 st.write('### Instituição de Ensino')
 input_ensino = st.selectbox('Qual é a sua instituição de ensino?', base_completa['Instituição de ensino'].unique())
+
+def calcular_inde(df):
+    def calcular_linha(row):
+        if row['Fase'] == 8:
+            return (row['IAN'] * 0.1 + row['IDA'] * 0.4 + row['IEG'] * 0.2 +
+                    row['IAA'] * 0.1 + row['IPS'] * 0.2)
+        else:
+            return (row['IAN'] * 0.1 + row['IDA'] * 0.2 + row['IEG'] * 0.2 +
+                    row['IAA'] * 0.1 + row['IPS'] * 0.1 + row['IPP'] * 0.1 + row['IPV'] * 0.2)
+
+    return df.apply(calcular_linha, axis=1)
+
+
+novo_cliente = [
+                    input_fase,
+                    input_genero,
+                    input_ensino,
+                    input_iaa,
+                    input_ieg,
+                    input_ips,
+                    input_ida,
+                    input_matem,
+                    input_port,
+                    input_ingles,
+                    input_ipv,
+                    input_ian,
+                    input_idade,
+                    input_ipp,
+                    input_defasagem,
+                    0,
+                    0
+                    ]
+
+
+
+def data_split(df, test_size):
+    SEED = 1561651
+    treino_df, teste_df = train_test_split(df, test_size=test_size, random_state=SEED)
+    return treino_df.reset_index(drop=True), teste_df.reset_index(drop=True)
+
+treino_df, teste_df = data_split(base_completa, 0.2)
+
+cliente_predict_df = pd.DataFrame([novo_cliente],columns=teste_df.columns)
+
+cliente_predict_df['INDE'] = calcular_inde(cliente_predict_df)
+
+teste_novo_cliente  = pd.concat([teste_df,cliente_predict_df],ignore_index=True)
+teste_novo_cliente = pipeline(teste_novo_cliente)
+
+cliente_pred = teste_novo_cliente.drop(['Status_entrada'], axis=1)
+
+if st.button('Enviar'):
+    model = joblib.load('logistico.joblib')
+    final_pred = model.predict(cliente_pred)
+    if final_pred[-1] == 0:
+        st.success('### O aluno tem altas chances de continuar no programa!')
+        st.balloons()
+    else:
+        st.error('### Infelizmente, o aluno tem altas chances de desistir do programa e merece uma atenção especial')
