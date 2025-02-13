@@ -214,20 +214,21 @@ with col7:
     st.write('### IPP')
     input_ipp = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipp'))
 
-st.warning("""
-**Indicadores de Avaliação**  
+st.markdown("""
+<div style="background-color: #cce5ff; padding: 15px; border-radius: 5px; border-left: 5px solid #007bff;">
+    <strong>Indicadores de Avaliação</strong><br><br>
+    <b>IAN:</b> Indicador de Adequação ao Nível – Média das Notas de Adequação do Aluno<br>
+    <b>IDA:</b> Indicador de Aprendizagem - Média das Notas do Indicador de Aprendizagem (de 0 até 10 pontos)<br>
+    <b>IEG:</b> Indicador de Engajamento – Média das Notas de Engajamento do Aluno (de 0 até 10 pontos)<br>
+    <b>IAA:</b> Indicador de Auto Avaliação – Média das Notas de Auto Avaliação do Aluno (de 0 até 10 pontos)<br><br>
+    
+    <strong>Indicadores de Conselho</strong><br><br>
+    <b>IPS:</b> Indicador Psicossocial – Média das Notas Psicossociais do Aluno (de 0 até 10 pontos)<br>
+    <b>IPP:</b> Indicador Psicopedagógico – Média das Notas Psico Pedagógicas do Aluno (de 0 até 10 pontos)<br>
+    <b>IPV:</b> Indicador de Ponto de Virada – Média das Notas de Ponto de Virada do Aluno (de 0 até 10 pontos)<br>
+</div>
+""", unsafe_allow_html=True)
 
-- **IAN:** Indicador de Adequação ao Nível – Média das Notas de Adequação do Aluno  
-- **IDA:** Indicador de Aprendizagem - Média das Notas do Indicador de Aprendizagem (de 0 até 10 pontos)  
-- **IEG:** Indicador de Engajamento – Média das Notas de Engajamento do Aluno (de 0 até 10 pontos)  
-- **IAA:** Indicador de Auto Avaliação – Média das Notas de Auto Avaliação do Aluno (de 0 até 10 pontos)  
-
-**Indicadores de Conselho**  
-
-- **IPS:** Indicador Psicossocial – Média das Notas Psicossociais do Aluno (de 0 até 10 pontos)  
-- **IPP:** Indicador Psicopedagógico – Média das Notas Psico Pedagógicas do Aluno (de 0 até 10 pontos)  
-- **IPV:** Indicador de Ponto de Virada – Média das Notas de Ponto de Virada do Aluno (de 0 até 10 pontos)  
-""")
 
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
