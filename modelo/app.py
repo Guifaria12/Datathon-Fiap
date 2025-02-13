@@ -66,6 +66,82 @@ base_completa.loc[base_completa['origem'] == 'Base2022', 'INDE'] = base_completa
 
 base_completa.drop(columns=['INDE 22', 'INDE 2023', 'INDE 23', 'INDE 2024'], inplace=True)
 
+# Função para calcular a idade a partir de uma data no formato dd/mm/aaaa
+def calcular_idade(data, ano_referencia):
+    if isinstance(data, str):  # Verifica se o valor é uma string
+        try:
+            # Converte a string para data
+            data = pd.to_datetime(data, format='%d/%m/%Y')
+            return ano_referencia - data.year
+        except Exception as e:
+            return None  # Retorna None se não for possível converter
+    return data  # Se já for um int, retorna o valor sem alteração
+
+# Aplicando a lógica para as duas colunas
+base_completa['Idade 22'] = base_completa['Idade 22'].apply(calcular_idade, ano_referencia=2022)
+base_completa['Idade'] = base_completa.apply(
+    lambda row: calcular_idade(row['Idade'], 2024) if row['origem'] == 'Base2024' else calcular_idade(row['Idade'], 2023),
+    axis=1
+)
+
+base_completa['Idade'] = base_completa[['Idade 22', 'Idade']].sum(axis=1, skipna=True)
+base_completa.drop(columns=['Idade 22'], inplace=True)
+
+base_completa['Defasagem'] = base_completa[['Defas', 'Defasagem']].sum(axis=1, skipna=True)
+base_completa.drop(columns=['Defas'], inplace=True)
+
+print(base_completa.notnull().sum().sort_values(ascending=False).to_string())
+
+# Mapeamento das classificações semelhantes
+mapeamento = {
+    'Privada - Programa de apadrinhamento': 'Privada',
+    'Privada *Parcerias com Bolsa 100%': 'Privada',
+    'Privada - Pagamento por *Empresa Parceira': 'Privada',
+    'Rede Decisão': 'Privada',
+    'Escola Pública': 'Pública',
+    'Escola JP II': 'Pública',
+    'Bolsista Universitário *Formado (a)': 'Bolsista',
+    'Nenhuma das opções acima': 'Outros',
+    'Concluiu o 3º EM': 'Outros'
+}
+
+# Aplicar o mapeamento para a coluna 'Instituição de ensino'
+base_completa['Instituição de ensino'] = base_completa['Instituição de ensino'].replace(mapeamento)
+
+# Verificar as classificações únicas após o agrupamento
+base_completa['Instituição de ensino'].unique()
+
+# Mapeamento das classificações semelhantes
+mapeamento_genero = {
+    'Menina': 'Feminino',
+    'Menino': 'Masculino'
+}
+
+# Aplicar o mapeamento para a coluna 'Gênero'
+base_completa['Gênero'] = base_completa['Gênero'].replace(mapeamento_genero)
+
+# Verificar as classificações únicas após o agrupamento
+base_completa['Gênero'].unique()
+
+import re
+
+# Função para extrair apenas números da coluna
+def extrair_numero(fase):
+    # Verifica se a fase é "ALFA" e retorna 0
+    if str(fase).upper() == 'ALFA':
+        return 0
+    # Verifica se a fase é um texto como 'FASE X' e retorna o número
+    match = re.search(r'\d+', str(fase))
+    if match:
+        return int(match.group())
+    return fase  # Caso não tenha número, retorna o valor original
+
+# Aplicando a função na coluna 'Fase'
+base_completa['Fase'] = base_completa['Fase'].apply(extrair_numero)
+
+# Verificando os valores únicos na coluna após a transformação
+print(base_completa['Fase'].unique())
+
 ############################# Streamlit ############################
 st.markdown('<style>div[role="listbox"] ul{background-color: #6e42ad}; </style>', unsafe_allow_html=True)
 st.subheader ("""
