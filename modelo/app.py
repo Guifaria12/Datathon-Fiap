@@ -333,18 +333,7 @@ def roda_modelo(modelo):
     kstest = stats.ks_2samp(data_vet, data_des)
 
     print(f"Métrica KS: {kstest}")
-
-    print("\nConfusion Matrix\n")
-    # Criando matriz de confusão
-    fig, ax = plt.subplots(figsize=(7,7))
-    matriz_confusao = ConfusionMatrixDisplay.from_estimator(modelo, X_test, y_test, normalize='true',
-                                            display_labels=['Veterano', 'Desistente'],
-                                            ax=ax, cmap=plt.cm.Blues)
-    ax.set_title("Matriz de Confusão\n Normalizada", fontsize=16, fontweight="bold")
-    ax.set_xlabel("Label predita", fontsize=18)
-    ax.set_ylabel("Label verdadeira", fontsize=18)
-    plt.grid(False)
-    plt.show(matriz_confusao)
+    
 
     # Fazendo a predicao dos dados de teste e calculando o classification report
     predicao = modelo.predict(X_test)
