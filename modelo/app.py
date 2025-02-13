@@ -314,7 +314,7 @@ st.markdown("<h1 style='text-align: center; '> DATATHON - Modelo Preditivo </h1>
 st.warning('Preencha o formulário com todos os seus dados pessoais e clique no botão **ENVIAR** no final da página.')
 
 # Cria duas colunas
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3 = st.columns(3)
 
 # Usando um container para o conteúdo
 with st.container():
@@ -333,13 +333,13 @@ with col3:
      st.write('### IPS')
      input_ips = float(st.slider('Selecione a sua nota', 0, 1, key='nota_ips'))
 
+# Cria a segunda linha com 1 coluna para a quarta coluna
+col4, col5, col6, col7 = st.columns(4) # Cria a quarta coluna abaixo da primeira
+
 with col4:
     st.write('### IDA')
     input_ida = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ida'))
-
-# Cria a segunda linha com 1 coluna para a quarta coluna
-col5, col6, col7 = st.columns(3) # Cria a quarta coluna abaixo da primeira
-
+    
 # Coloca conteúdo na quarta coluna
 with col5:
    st.write('### IPV')
