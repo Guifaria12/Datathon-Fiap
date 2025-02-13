@@ -257,7 +257,11 @@ with col3:
     st.write('### Inglês')
     input_ingles = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ingles'))
 
-
+st.warning("""
+- **Matemática:** Média das Notas de Matemática  
+- **Português:** Média das Notas de Portugue s do Aluno 
+- **Inglês:** Média das Notas de Inglês do Aluno 
+""")
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
 # Gênero
