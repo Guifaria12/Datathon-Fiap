@@ -359,6 +359,10 @@ st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 st.write('### Género')
 input_genero = st.selectbox('Qual é o seu género?', base_completa['Gênero'].unique())
 
+# Idade
+st.write('### Idade')
+input_idade = st.selectbox('Qual é o seu género?', base_completa['Idade'].unique())
+
 # Instituição de Ensino
 st.write('### Instituição de Ensino')
-input_genero = st.selectbox('Qual é a sua instituição de ensino?', base_completa['Instituição de ensino'].unique())
+input_ensino = st.selectbox('Qual é a sua instituição de ensino?', base_completa['Instituição de ensino'].unique())
