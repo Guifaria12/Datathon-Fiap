@@ -336,4 +336,8 @@ st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 st.header("**Conclusão**")
 
 st.write("""
-A INSERIR """)
+Este trabalho teve como objetivo principal desenvolver um modelo preditivo para identificar possíveis desistentes entre os alunos veteranos atendidos pela ONG "Passos Mágicos". Utilizando técnicas de machine learning e com base em dados educacionais e socioeconômicos coletados entre 2020 e 2022, o modelo foi capaz de prever o comportamento dos estudantes, considerando fatores como desempenho acadêmico, condições socioeconômicas e outras variáveis relevantes.
+
+A identificação de alunos em risco de desistência é crucial para a ONG, pois permite a implementação de intervenções preventivas e personalizadas, aumentando as chances de retenção e sucesso educacional. O modelo desenvolvido oferece uma ferramenta valiosa para a tomada de decisões estratégicas, permitindo que a "Passos Mágicos" direcione seus recursos de forma mais eficiente e amplie o impacto positivo de suas iniciativas.
+
+Por fim, acreditamos que este trabalho não apenas contribui para a missão da ONG, mas também demonstra o potencial da ciência de dados como aliada na transformação social e educacional. A aplicação de modelos preditivos em contextos de vulnerabilidade social pode ser replicada em outras organizações, ampliando o alcance de ações que visam promover a equidade e a inclusão por meio da educação. """)
