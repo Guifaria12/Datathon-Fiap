@@ -352,7 +352,7 @@ with col2:
 # IPS na terceira coluna
 with col3:
      st.write('### IPS')
-     input_ips = float(st.slider('Selecione a sua nota', 0, 1, key='nota_ips'))
+     input_ips = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ips'))
 
 # Cria a segunda linha com 1 coluna para a quarta coluna
 col4, col5, col6, col7 = st.columns(4) # Cria a quarta coluna abaixo da primeira
@@ -404,7 +404,7 @@ input_genero = st.selectbox('Qual é o seu gênero?', base_completa['Gênero'].u
 
 # Idade
 st.write('### Idade')
-input_idade = float(st.slider('Selecione a sua idade', 18, 100))
+input_idade = float(st.slider('Selecione a sua idade', 0, 100))
 
 # Instituição de Ensino
 st.write('### Instituição de Ensino')
@@ -431,7 +431,7 @@ novo_cliente = [
                     input_ips,
                     input_ida,
                     input_matem,
-                    input_port,
+                    input_portug,
                     input_ingles,
                     input_ipv,
                     input_ian,
