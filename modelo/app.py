@@ -172,6 +172,11 @@ with col2:
     st.write('### Defasagem')
     input_defasagem = float(st.slider('Selecione a sua nota', -5, 5, key='nota_defasagem'))
 
+st.warning("""
+- **Fase:** Fase do Aluno na Passos Mágicos que está relacionado ao Nível de Aprendizado (de 0 (Alfa) até 8)  
+- **Defasagem:** Mostra o nível de defasagem do ano 
+""")
+
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
 # Cria duas colunas
