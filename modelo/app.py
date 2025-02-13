@@ -355,69 +355,10 @@ with col7:
 
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
-# Ocupação
+# Gênero
 st.write('### Género')
 input_genero = st.selectbox('Qual é o seu género?', base_completa['Gênero'].unique())
 
-# Lista de todas as variáveis: 
-novo_cliente = [0, # ID_Cliente
-                    input_carro_proprio, # Tem_carro
-                    input_casa_propria, # Tem_Casa_Propria
-                    telefone_trabalho, # Tem_telefone_trabalho
-                    telefone, # Tem_telefone_fixo
-                    email,  # Tem_email
-                    membros_familia,  # Tamanho_Familia
-                    input_rendimentos, # Rendimento_anual	
-                    input_idade, # Idade
-                    input_tempo_experiencia, # Anos_empregado
-                    input_categoria_renda, # Categoria_de_renda
-                    input_grau_escolaridade, # Grau_Escolaridade
-                    input_estado_civil, # Estado_Civil	
-                    input_tipo_moradia, # Moradia                                                  
-                    input_ocupacao, # Ocupacao
-                     0 # target (Mau)
-                    ]
-
-
-# Separando os dados em treino e teste
-def data_split(df, test_size):
-    SEED = 1561651
-    treino_df, teste_df = train_test_split(df, test_size=test_size, random_state=SEED)
-    return treino_df.reset_index(drop=True), teste_df.reset_index(drop=True)
-
-treino_df, teste_df = data_split(dados, 0.2)
-
-#Criando novo cliente
-cliente_predict_df = pd.DataFrame([novo_cliente],columns=teste_df.columns)
-
-#Concatenando novo cliente ao dataframe dos dados de teste
-teste_novo_cliente  = pd.concat([teste_df,cliente_predict_df],ignore_index=True)
-
-#Pipeline
-def pipeline_teste(df):
-
-    pipeline = Pipeline([
-        ('feature_dropper', DropFeatures()),
-        ('OneHotEncoding', OneHotEncodingNames()),
-        ('ordinal_feature', OrdinalFeature()),
-        ('min_max_scaler', MinMaxWithFeatNames()),
-    ])
-    df_pipeline = pipeline.fit_transform(df)
-    return df_pipeline
-
-#Aplicando a pipeline
-teste_novo_cliente = pipeline_teste(teste_novo_cliente)
-
-#retirando a coluna target
-cliente_pred = teste_novo_cliente.drop(['Mau'], axis=1)
-
-#Predições 
-if st.button('Enviar'):
-    model = joblib.load('modelo/xgb.joblib')
-    final_pred = model.predict(cliente_pred)
-    if final_pred[-1] == 0:
-        st.success('### Parabéns! Você teve o cartão de crédito aprovado')
-        st.balloons()
-    else:
-        st.error('### Infelizmente, não podemos liberar crédito para você agora!')
- 
+# Instituição de Ensino
+st.write('### Instituição de Ensino')
+input_genero = st.selectbox('Qual é a sua instituição de ensino?', base_completa['Instituição de ensino'].unique())
