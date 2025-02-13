@@ -362,12 +362,12 @@ col1, col2, col3 = st.columns(3)
 with st.container():
     # Matem na primeira coluna dentro do container
     with col1:
-        st.write('### Matem')
+        st.write('### Matemática')
         input_matem = float(st.slider('Selecione a sua nota', 0, 10, key='nota_matem'))
 
 # Portug na segunda coluna
 with col2:
-    st.write('### Portug')
+    st.write('### Português')
     input_portug = float(st.slider('Selecione a sua nota', 0, 10, key='nota_portug'))
 
 with col3:
