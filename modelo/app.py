@@ -174,7 +174,7 @@ with col2:
 
 st.warning("""
 - **Fase:** Fase do Aluno na Passos Mágicos que está relacionado ao Nível de Aprendizado (de 0 (Alfa) até 8)  
-- **Defasagem:** Mostra o nível de defasagem do ano 
+- **Defasagem:** Mostra o nível de defasagem do aluno a partir da diferença do ano ideal para o ano em que esta cursando. 
 """)
 
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
