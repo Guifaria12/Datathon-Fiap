@@ -332,3 +332,10 @@ if st.button('Enviar'):
         st.balloons()
     else:
         st.error('### Infelizmente, o aluno tem altas chances de desistir do programa e merece uma atenção especial')
+        
+st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
+
+st.header("**Conclusão**")
+
+st.write("""
+A INSERIR """)
