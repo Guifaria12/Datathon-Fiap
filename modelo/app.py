@@ -261,8 +261,8 @@ def calcular_inde(df):
 
     return df.apply(calcular_linha, axis=1)
 
-
 novo_cliente = [
+                    0,
                     input_fase,
                     input_genero,
                     input_ensino,
@@ -281,8 +281,6 @@ novo_cliente = [
                     0,
                     0
                     ]
-
-
 
 def data_split(df, test_size):
     SEED = 1561651
