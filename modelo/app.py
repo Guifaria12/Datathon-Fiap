@@ -187,7 +187,7 @@ with st.container():
     # IAA na primeira coluna dentro do container
     with col1:
         st.write('### IAA')
-        input_iaa = float(st.slider('Selecione a sua nota', 0, 10, key='nota_iaa'))
+        input_iaa = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_iaa'))
 
 # IEG na segunda coluna
 with col2:
