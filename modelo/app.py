@@ -322,7 +322,7 @@ cliente_predict_df['INDE'] = calcular_inde(cliente_predict_df)
 teste_novo_cliente  = pd.concat([teste_df,cliente_predict_df],ignore_index=True)
 teste_novo_cliente = pipeline(teste_novo_cliente)
 
-cliente_pred = teste_novo_cliente
+cliente_pred = teste_novo_cliente.drop(['Status_entrada'], axis=1)
 
 if st.button('Enviar'):
     model = joblib.load('logistico.joblib')
