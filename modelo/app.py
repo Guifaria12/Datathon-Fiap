@@ -316,7 +316,7 @@ def data_split(df, test_size):
 treino_df, teste_df = data_split(base_completa, 0.2)
 
 cliente_predict_df = pd.DataFrame([novo_cliente],columns=teste_df.columns)
-
+cliente_predict_df = cliente_predict_df.set_index(cliente_predict_df.columns[0])
 cliente_predict_df['INDE'] = calcular_inde(cliente_predict_df)
 
 teste_novo_cliente  = pd.concat([teste_df,cliente_predict_df],ignore_index=True)
