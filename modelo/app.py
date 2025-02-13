@@ -344,6 +344,7 @@ col5, col7, col7 = st.columns(3) # Cria a quarta coluna abaixo da primeira
 with col5:
    st.write('### IPV')
     input_ipv = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ipv'))
+
 with col6:
     st.write('### IAN')
     input_ian = float(st.slider('Selecione a sua nota', 0, 10, key='nota_ian'))
