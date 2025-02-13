@@ -7,3 +7,5 @@ Repositório do aplicativo Streamlit para o projeto Datathon, parte da conclusã
 Link Streamlit: [Clique AQUI para acessar](https://datathon-fiap-esgnemcyydwythaftfck4x.streamlit.app/)
 
 Notebook: [Clique AQUI para acessar](https://colab.research.google.com/drive/13CbF9keJmI32oB-ZBO1_ko1yXHjVPYzd#scrollTo=8DUgBbREoIxW&uniqifier=1)
+
+A aplicação utilizada no streamlit encontrada na pasta [modelo](https://github.com/Guifaria12/Datathon-Fiap/tree/main/modelo)
