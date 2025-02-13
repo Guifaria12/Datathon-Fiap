@@ -328,8 +328,8 @@ cliente_pred.drop(columns=['Unnamed: 0'], inplace=True)
 if st.button('Enviar'):
     model = joblib.load('logistico.joblib')
     probabilidades = model.predict_proba(cliente_pred)[-1]
-    st.write(f"Probabilidade de ser veterano: {probabilidades[0]:.2f}")
-    st.write(f"Probabilidade de ser desistente: {probabilidades[1]:.2f}")
+    st.write(f"Probabilidade de continuar no programa: {probabilidades[0] * 100:.2f}%")
+    st.write(f"Probabilidade de desistir do programa: {probabilidades[1] * 100:.2f}%")
         
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
