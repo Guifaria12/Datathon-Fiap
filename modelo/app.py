@@ -326,12 +326,9 @@ cliente_pred = teste_novo_cliente
 
 if st.button('Enviar'):
     model = joblib.load('logistico.joblib')
-    final_pred = model.predict(cliente_pred)
-    if final_pred[-1] == 0:
-        st.success('### O aluno tem altas chances de continuar no programa!')
-        st.balloons()
-    else:
-        st.error('### Infelizmente, o aluno tem altas chances de desistir do programa e merece uma atenção especial')
+    probabilidades = model.predict_proba(cliente_pred)[-1]
+    st.write(f"Probabilidade de ser veterano: {probabilidades[0]:.2f}")
+    st.write(f"Probabilidade de ser desistente: {probabilidades[1]:.2f}")
         
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
