@@ -170,7 +170,7 @@ with st.container():
         st.write('### Fase')
         input_fase = float(st.slider('Selecione a sua nota', 0, 8, key='nota_fase'))
 
-# IEG na segunda coluna
+# Defasagem na segunda coluna
 with col2:
     st.write('### Defasagem')
     input_defasagem = float(st.slider('Selecione a sua nota', -5, 5, key='nota_defasagem'))
@@ -202,14 +202,13 @@ with col3:
      st.write('### IPS')
      input_ips = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ips'))
 
-# Cria a segunda linha com 1 coluna para a quarta coluna
+# Cria a segunda linha de colunas 
 col4, col5, col6, col7 = st.columns(4) # Cria a quarta coluna abaixo da primeira
 
 with col4:
     st.write('### IDA')
     input_ida = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ida'))
     
-# Coloca conteúdo na quarta coluna
 with col5:
    st.write('### IPV')
    input_ipv = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ipv'))
@@ -241,7 +240,6 @@ st.warning("""
 
 st.markdown("<hr style='border:1px solid #FFFFFF;'>", unsafe_allow_html=True)
 
-# Cria duas colunas
 col1, col2, col3 = st.columns(3)
 
 # Usando um container para o conteúdo
@@ -255,7 +253,8 @@ with st.container():
 with col2:
     st.write('### Português')
     input_portug = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_portug'))
-
+    
+# Ing na terceira coluna
 with col3:
     st.write('### Inglês')
     input_ingles = float(st.slider('Selecione a sua nota', 0.0, 10.0, key='nota_ingles'))
